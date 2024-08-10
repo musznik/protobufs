@@ -80,6 +80,11 @@ message ModuleConfig {
      * Settings for reporting information about our node to a map via MQTT
      */
     MapReportSettings map_report_settings = 11;
+
+    /*
+     * Do not forward private messages via MQTT
+     */
+    bool secure_messages = 12;
   }
 
   /*
