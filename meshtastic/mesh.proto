@@ -17,7 +17,7 @@ option java_package = "com.geeksville.mesh";
 option swift_prefix = "";
 
 /*
- * a gps position
+ * A GPS Position
  */
 message Position {
   /*
@@ -1461,7 +1461,7 @@ message MyNodeInfo {
   /*
    * Unique hardware identifier for this device
    */
-  uint64 device_id = 12;
+  bytes device_id = 12;
 }
 
 /*
