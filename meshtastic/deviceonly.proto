@@ -138,7 +138,7 @@ message NodeInfoLite {
   bool via_mqtt = 8;
 
   /*
-   * Number of hops away from us this node is (0 if adjacent)
+   * Number of hops away from us this node is (0 if direct neighbor)
    */
   optional uint32 hops_away = 9;
 
