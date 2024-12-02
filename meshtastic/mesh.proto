@@ -651,6 +651,12 @@ enum HardwareModel {
   TLORA_C6 = 83;
 
   /*
+   * WisMesh Tap
+   * RAK-4631 w/ TFT in injection modled case
+   */
+  WISMESH_TAP = 84;
+
+  /*
    * ------------------------------------------------------------------------------------------------------------------------------------------
    * Reserved ID For developing private Ports. These will show up in live traffic sparsely, so we can use a high number. Keep it within 8 bits.
    * ------------------------------------------------------------------------------------------------------------------------------------------
@@ -1233,6 +1239,18 @@ message MeshPacket {
    * Indicates whether the packet was en/decrypted using PKI
    */
   bool pki_encrypted = 17;
+
+  /*
+   * Last byte of the node number of the node that should be used as the next hop in routing. 
+   * Set by the firmware internally, clients are not supposed to set this.
+   */
+  uint32 next_hop = 18;
+
+  /*
+   * Last byte of the node number of the node that will relay/relayed this packet.
+   * Set by the firmware internally, clients are not supposed to set this.
+   */
+  uint32 relay_node = 19;
 }
 
 /*
@@ -1250,7 +1268,7 @@ enum Constants {
    * note: this payload length is ONLY the bytes that are sent inside of the Data protobuf (excluding protobuf overhead). The 16 byte header is
    * outside of this envelope
    */
-  DATA_PAYLOAD_LEN = 237;
+  DATA_PAYLOAD_LEN = 233;
 }
 
 /*
