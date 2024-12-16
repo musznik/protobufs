@@ -665,6 +665,14 @@ enum HardwareModel {
   ROUTASTIC = 85;
 
   /*
+   * Mesh-Tab, esp32 based
+   * https://github.com/valzzu/Mesh-Tab
+   */
+  MESH_TAB = 86;
+
+  
+
+  /*
    * ------------------------------------------------------------------------------------------------------------------------------------------
    * Reserved ID For developing private Ports. These will show up in live traffic sparsely, so we can use a high number. Keep it within 8 bits.
    * ------------------------------------------------------------------------------------------------------------------------------------------
@@ -1086,6 +1094,11 @@ message MeshPacket {
      * Higher priority for specific message types (portnums) to distinguish between other reliable packets.
      */ 
     HIGH = 100;
+
+    /*
+     * Higher priority alert message used for critical alerts which take priority over other reliable packets.
+     */ 
+    ALERT = 110;
 
     /*
      * Ack/naks are sent with very high priority to ensure that retransmission
