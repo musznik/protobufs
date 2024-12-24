@@ -4,7 +4,7 @@ package meshtastic;
 
 option csharp_namespace = "Meshtastic.Protobufs";
 option go_package = "github.com/meshtastic/go/generated";
-option java_outer_classname = "NodeStatus";
+option java_outer_classname = "NodeStatusProtos";
 option java_package = "com.geeksville.mesh";
 option swift_prefix = "";
 
