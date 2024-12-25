@@ -2080,3 +2080,11 @@ message ChunkedPayloadResponse {
     resend_chunks resend_chunks = 4;
   }
 }
+
+
+message NodeStatus {
+  /*
+   * user node text status
+   */
+  string text_status = 1;
+}
