@@ -746,6 +746,13 @@ message ModuleConfig {
   }
 
   /*
+   * user text status
+   */
+  message NodeStatusConfig {
+    string text_status = 1;
+  }
+
+  /*
    * TODO: REPLACE
    */
   oneof payload_variant {
@@ -857,9 +864,3 @@ enum RemoteHardwarePinType {
   DIGITAL_WRITE = 2;
 }
 
-message NodeStatusConfig {
-  /*
-   * user text status
-   */
-  string text_status = 1;
-}
