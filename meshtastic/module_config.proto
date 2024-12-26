@@ -813,6 +813,10 @@ message ModuleConfig {
      * TODO: REPLACE
      */
     PaxcounterConfig paxcounter = 13;
+
+
+    NodeStatusConfig node_status = 85;
+
   }
 }
 
@@ -851,4 +855,11 @@ enum RemoteHardwarePinType {
    * GPIO pin can be written to (high / low)
    */
   DIGITAL_WRITE = 2;
+}
+
+message NodeStatusConfig {
+  /*
+   * user text status
+   */
+  string text_status = 1;
 }
