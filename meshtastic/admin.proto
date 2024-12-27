@@ -152,6 +152,8 @@ message AdminMessage {
      * TODO: REPLACE
      */
     PAXCOUNTER_CONFIG = 12;
+
+    NODESTATUS_CONFIG = 84;
   }
 
   /*
