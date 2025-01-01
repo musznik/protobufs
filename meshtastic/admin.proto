@@ -152,6 +152,7 @@ message AdminMessage {
      * TODO: REPLACE
      */
     PAXCOUNTER_CONFIG = 12;
+
   }
 
   /*
