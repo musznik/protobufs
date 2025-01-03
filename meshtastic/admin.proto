@@ -153,6 +153,8 @@ message AdminMessage {
      */
     PAXCOUNTER_CONFIG = 12;
 
+
+    NODEMOD_CONFIG = 19;
   }
 
   /*

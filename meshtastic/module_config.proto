@@ -745,6 +745,13 @@ message ModuleConfig {
     uint32 blue = 5;
   }
 
+  message NodeModConfig {
+    /*
+    * user text status
+    */
+    string text_status = 1;
+  }
+
   /*
    * TODO: REPLACE
    */
@@ -813,6 +820,9 @@ message ModuleConfig {
      * TODO: REPLACE
      */
     PaxcounterConfig paxcounter = 13;
+
+
+    NodeModConfig node_mod = 20;
 
   }
 }

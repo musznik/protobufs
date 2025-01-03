@@ -221,6 +221,11 @@ enum PortNum {
   ATAK_FORWARDER = 257;
 
   /*
+   * Node Modification proto for custom node status (text description) handling for Firmware+
+   */
+  NODE_MOD_APP = 278;
+
+  /*
    * Currently we limit port nums to no higher than this value
    */
   MAX = 511;
