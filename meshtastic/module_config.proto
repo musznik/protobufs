@@ -80,11 +80,6 @@ message ModuleConfig {
      * Settings for reporting information about our node to a map via MQTT
      */
     MapReportSettings map_report_settings = 11;
-
-    /*
-     * Do not forward private messages via MQTT
-     */
-    bool secure_messages = 12;
   }
 
   /*
@@ -752,6 +747,17 @@ message ModuleConfig {
     string text_status = 1;
   }
 
+  message NodeModAdminConfig {
+    /*
+    * sniffer enabled
+    */
+    bool sniffer_enabled = 1;
+    /*
+    * do not send prv over mqtt
+    */
+    bool do_not_send_prv_over_mqtt = 2;
+  }
+
   /*
    * TODO: REPLACE
    */
@@ -823,6 +829,8 @@ message ModuleConfig {
 
 
     NodeModConfig node_mod = 20;
+
+    NodeModAdminConfig node_mod_admin = 21;
 
   }
 }

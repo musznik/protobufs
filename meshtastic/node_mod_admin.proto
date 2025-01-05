@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package meshtastic;
+
+option csharp_namespace = "Meshtastic.Protobufs";
+option go_package = "github.com/meshtastic/go/generated";
+option java_outer_classname = "NodeModAdminProtos";
+option java_package = "com.geeksville.mesh";
+option swift_prefix = "";
+
+
+message NodeModAdmin {
+  /*
+   * sniffer enabled
+   */
+  bool sniffer_enabled = 1;
+  /*
+   * do not send prv over mqtt
+   */
+  bool do_not_send_prv_over_mqtt = 2;
+  
+}

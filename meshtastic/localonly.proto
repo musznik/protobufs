@@ -137,6 +137,11 @@ message LocalModuleConfig {
   ModuleConfig.NodeModConfig nodemod = 20;
 
   /*
+   * NodeModAdmin Config
+   */
+  ModuleConfig.NodeModAdminConfig nodemodadmin = 21;
+
+  /*
    * A version integer used to invalidate old save files when we make
    * incompatible changes This integer is set at build time and is private to
    * NodeDB.cpp in the device code.
