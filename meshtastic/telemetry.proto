@@ -302,6 +302,36 @@ message LocalStats {
 }
 
 /*
+ * Local device mesh statistics
+ */
+message LocalStatsExtended {
+  /*
+   * free cheap memory
+   */
+  uint32 memory_free_cheap = 1;
+
+  /*
+   * total memory
+   */
+  uint32 memory_total = 2;
+
+  /*
+   * cpu usage percent
+   */
+  uint32 cpu_usage_percent = 3;
+
+  /*
+   * free space on flash
+   */
+  uint32 flash_used_bytes = 4;
+
+  /*
+   * total available space
+   */
+  uint32 flash_total_bytes = 5;
+}
+
+/*
  * Health telemetry metrics
  */
  message HealthMetrics {
@@ -360,6 +390,11 @@ message Telemetry {
      * Health telemetry metrics
      */
     HealthMetrics health_metrics = 7;
+
+    /*
+     * Health telemetry metrics
+     */
+    LocalStatsExtended local_stats_extended = 9;
   }
 }
 
