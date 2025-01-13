@@ -329,6 +329,16 @@ message LocalStatsExtended {
    * total available space
    */
   uint32 flash_total_bytes = 5;
+
+  /*
+   * psram used
+   */
+  uint32 memory_psram_free = 6;  
+
+  /*
+   * psram total
+   */
+  uint32 memory_psram_total = 7;
 }
 
 /*
