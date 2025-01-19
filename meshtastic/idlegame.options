@@ -1,0 +1,12 @@
+*IdleGameState.village_name max_size:38
+*IdleGameState.population int_size:8
+*IdleGameState.resources int_size:8
+*IdleGameState.defense int_size:8
+*IdleGameState.technology int_size:8
+
+*IdleGameAction.from_village max_size:38
+*IdleGameAction.to_village max_size:38
+*IdleGameAction.note max_size:50
+*IdleGameAction.quantity int_size:8
+
+*IdleGameKnownVillages.known max_count:15

@@ -756,6 +756,112 @@ message ModuleConfig {
     * do not send prv over mqtt
     */
     bool do_not_send_prv_over_mqtt = 2;
+    /*
+    * local stats over mesh enabled
+    */
+    bool local_stats_over_mesh_enabled = 3;
+    /*
+    * local stats extended over mesh enabled
+    */
+    bool local_stats_extended_over_mesh_enabled = 4;
+
+    /*
+    * idlegame enabled
+    */
+    bool idlegame_enabled = 5;
+
+    /*
+    * base ch util + additional chan utilization defined by user
+    */
+    uint32 additional_chutil = 6;
+
+    /*
+    * base tx util + additional tx chan utilization defined by user
+    */
+    float additional_txutil = 7;
+
+    /*
+    * additional chutil polite percent defined by user
+    */
+    uint32 additional_polite_channel_percent = 8;
+
+    /*
+    * additional chutil polite percent defined by user
+    */
+    uint32 additional_polite_duty_cycle_percent = 9;
+
+    /*
+    * current tx util limit
+    */
+    float current_tx_util_limit = 10;
+
+    /*
+    * current nmax channel util percent
+    */
+    uint32 current_max_channel_util_percent = 11;
+
+    /*
+    * current polite channel util percent
+    */
+    uint32 current_polite_channel_util_percent = 12;
+
+    /*
+    * current polite duty cycle percent
+    */
+    uint32 current_polite_duty_cycle_percent = 13;
+  }
+
+  message IdleGameKnownVillages {
+    repeated IdleGameState known = 1;
+  }
+
+  message IdleGameAlliance {
+    uint32 node_id   = 1;
+    uint32 started_at = 2;
+    bytes morale_bonus = 3;
+  }
+
+  message IdleGamePatron {
+      uint32 node_id   = 1; 
+      uint32 started_at = 2;
+  }
+
+  message IdleGameRelations {
+      repeated IdleGameAlliance alliances = 1;
+      repeated IdleGamePatron   patrons   = 2;
+  }
+
+  enum IdleGameActionType {
+      ACTION_NONE    = 0;
+      ACTION_ATTACK  = 1;
+      ACTION_TRADE   = 2;
+      ACTION_ALLIANCE = 3;
+      ACTION_OTHER   = 4;
+  }
+
+  message IdleGameState {
+      string village_name = 1;
+      uint32 population   = 2; 
+      uint32 resources    = 3;
+      uint32 defense      = 4;
+      uint32 technology   = 5;
+      uint32 node_id      = 6;
+      uint32 level        = 7;
+      uint32 version      = 8;
+  }
+
+  message IdleGameAction {
+      IdleGameActionType action_type = 1;
+      uint32 quantity = 4;
+  }
+  
+  message IdleGameConfig {
+    oneof variant {
+        IdleGameState state = 1;
+        IdleGameAction action = 2;
+        IdleGameKnownVillages known_villages = 3;
+        IdleGameRelations relations = 4;
+    }
   }
 
   /*
@@ -827,11 +933,11 @@ message ModuleConfig {
      */
     PaxcounterConfig paxcounter = 13;
 
-
     NodeModConfig node_mod = 20;
 
     NodeModAdminConfig node_mod_admin = 21;
 
+    IdleGameConfig idle_game = 22;
   }
 }
 
@@ -871,4 +977,4 @@ enum RemoteHardwarePinType {
    */
   DIGITAL_WRITE = 2;
 }
-
+ 

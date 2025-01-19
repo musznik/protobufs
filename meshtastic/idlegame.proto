@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package meshtastic;
+
+option csharp_namespace = "Meshtastic.Protobufs";
+option go_package = "github.com/meshtastic/go/generated";
+option java_outer_classname = "IdleGameProtos";
+option java_package = "com.geeksville.mesh";
+option swift_prefix = "";
+
+message IdleGameKnownVillages {
+    repeated IdleGameState known = 1;
+}
+
+enum IdleGameActionType {
+    ACTION_NONE    = 0;
+    ACTION_ATTACK  = 1;
+    ACTION_TRADE   = 2;
+    ACTION_ALLIANCE = 3;
+    ACTION_OTHER   = 4;
+}
+
+// Reprezentacja stanu węzła (miasta) w grze
+message IdleGameState {
+    string village_name = 1;
+    uint32 population   = 2; 
+    uint32 resources    = 3;
+    uint32 defense      = 4;
+    uint32 technology   = 5;
+    uint32 node_id      = 6;
+}
+
+message IdleGameAction {
+    IdleGameActionType action_type = 1;
+    string from_village = 2;
+    string to_village   = 3;
+
+    // Przykładowa ilość surowców bądź wojska
+    uint32 quantity = 4;
+
+    // Opcjonalne pole tekstowe, np. "Handel 10 surowców za 5 energii" albo "Atakujemy!"
+    string note = 5;
+}
+
+// Główna wiadomość: zawiera albo stan (IdleGameState), albo akcję (IdleGameAction)
+message IdleGame {
+    oneof variant {
+        IdleGameState state = 1;
+        IdleGameAction action = 2;
+        IdleGameKnownVillages known_villages = 3;
+    }
+}

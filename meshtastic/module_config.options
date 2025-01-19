@@ -29,3 +29,32 @@
 *DetectionSensorConfig.detection_trigger_type max_size:8
 
 *NodeModConfig.text_status max_size:200
+
+*NodeModAdmin.additional_chutil int_size:8
+*NodeModAdmin.additional_txutil int_size:8
+*NodeModAdmin.additional_polite_channel_percent int_size:8
+*NodeModAdmin.additional_polite_duty_cycle_percent  int_size:8
+*NodeModAdmin.current_max_channel_util_percent int_size:8
+*NodeModAdmin.current_polite_channel_util_percent int_size:8
+*NodeModAdmin.current_polite_duty_cycle_percent int_size:8
+
+*IdleGameKnownVillages.known max_count:15
+
+*IdleGameAlliance.node_id int_size:8
+*IdleGameAlliance.started_at int_size:8
+*IdleGameAlliance.morale_bonus max_size:1
+
+*IdleGamePatron.node_id int_size:8
+*IdleGamePatron.started_at int_size:8
+
+*IdleGameRelations.alliances max_count:10
+*IdleGameRelations.patrons max_count:10
+
+*IdleGameState.village_name max_size:38
+*IdleGameState.population int_size:8
+*IdleGameState.resources int_size:8
+*IdleGameState.defense int_size:8
+*IdleGameState.technology int_size:8
+*IdleGameState.node_id int_size:8
+
+*IdleGameAction.quantity int_size:8

@@ -157,6 +157,8 @@ message AdminMessage {
     NODEMOD_CONFIG = 19;
 
     NODEMOD_ADMIN_CONFIG = 20;
+
+    IDLEGAME_ADMIN_CONFIG = 21;
   }
 
   /*

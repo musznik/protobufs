@@ -1,0 +1,8 @@
+*NodeModAdmin.additional_chutil int_size:8
+*NodeModAdmin.additional_txutil int_size:8
+*NodeModAdmin.additional_polite_channel_percent int_size:8
+*NodeModAdmin.additional_polite_duty_cycle_percent  int_size:8
+
+*NodeModAdmin.current_max_channel_util_percent int_size:8
+*NodeModAdmin.current_polite_channel_util_percent int_size:8
+*NodeModAdmin.current_polite_duty_cycle_percent int_size:8

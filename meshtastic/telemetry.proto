@@ -248,15 +248,15 @@ message LocalStats {
   /*
    * How long the device has been running since the last reboot (in seconds)
    */
-  uint32 uptime_seconds = 1;
+  optional uint32 uptime_seconds = 1;
   /*
    * Utilization for the current channel, including well formed TX, RX and malformed RX (aka noise).
    */
-  float channel_utilization = 2;
+  optional float channel_utilization = 2;
   /*
    * Percent of airtime for transmission used within the last hour.
    */
-  float air_util_tx = 3;
+  optional float air_util_tx = 3;
 
   /*
    * Number of packets sent
@@ -333,12 +333,22 @@ message LocalStatsExtended {
   /*
    * psram used
    */
-  uint32 memory_psram_free = 6;  
+  optional uint32 memory_psram_free = 6;  
 
   /*
    * psram total
    */
-  uint32 memory_psram_total = 7;
+  optional uint32 memory_psram_total = 7;
+
+    /*
+   * psram total
+   */
+  uint32 rx_total_bytes = 8;
+
+   /*
+   * psram total
+   */
+  uint32 tx_total_bytes = 9;
 }
 
 /*

@@ -226,6 +226,11 @@ enum PortNum {
   NODE_MOD_APP = 278;
 
   /*
+   * IdleGame port
+   */
+  IDLE_GAME_APP = 322;
+
+  /*
    * Currently we limit port nums to no higher than this value
    */
   MAX = 511;
