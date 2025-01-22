@@ -1,12 +1,22 @@
-*IdleGameState.village_name max_size:38
+*IdleGameKnownVillages.known max_count:10
+
+*IdleGameAlliance.node_id int_size:8
+*IdleGameAlliance.started_at int_size:8
+*IdleGameAlliance.morale_bonus max_size:1
+
+*IdleGamePatron.node_id int_size:8
+*IdleGamePatron.started_at int_size:8
+
+*IdleGameRelations.alliances max_count:4
+*IdleGameRelations.patrons max_count:4
+
+*IdleGameState.village_name max_size:18
 *IdleGameState.population int_size:8
 *IdleGameState.resources int_size:8
 *IdleGameState.defense int_size:8
 *IdleGameState.technology int_size:8
+*IdleGameState.node_id int_size:8
 
-*IdleGameAction.from_village max_size:38
-*IdleGameAction.to_village max_size:38
-*IdleGameAction.note max_size:50
 *IdleGameAction.quantity int_size:8
-
-*IdleGameKnownVillages.known max_count:15
+*IdleGameAction.from_node_id_village int_size:8
+*IdleGameAction.to_node_id_village int_size:8

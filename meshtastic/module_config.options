@@ -38,7 +38,7 @@
 *NodeModAdmin.current_polite_channel_util_percent int_size:8
 *NodeModAdmin.current_polite_duty_cycle_percent int_size:8
 
-*IdleGameKnownVillages.known max_count:15
+*IdleGameKnownVillages.known max_count:10
 
 *IdleGameAlliance.node_id int_size:8
 *IdleGameAlliance.started_at int_size:8
@@ -47,10 +47,10 @@
 *IdleGamePatron.node_id int_size:8
 *IdleGamePatron.started_at int_size:8
 
-*IdleGameRelations.alliances max_count:10
-*IdleGameRelations.patrons max_count:10
+*IdleGameRelations.alliances max_count:4
+*IdleGameRelations.patrons max_count:4
 
-*IdleGameState.village_name max_size:38
+*IdleGameState.village_name max_size:18
 *IdleGameState.population int_size:8
 *IdleGameState.resources int_size:8
 *IdleGameState.defense int_size:8
@@ -58,3 +58,5 @@
 *IdleGameState.node_id int_size:8
 
 *IdleGameAction.quantity int_size:8
+*IdleGameAction.from_node_id_village int_size:8
+*IdleGameAction.to_node_id_village int_size:8

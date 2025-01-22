@@ -850,10 +850,12 @@ message ModuleConfig {
       uint32 version      = 8;
   }
 
-  message IdleGameAction {
-      IdleGameActionType action_type = 1;
-      uint32 quantity = 4;
-  }
+message IdleGameAction {
+    IdleGameActionType action_type = 1;
+    uint32 from_node_id_village = 2;
+    uint32 to_node_id_village   = 3;
+    uint32 quantity = 4;
+}
   
   message IdleGameConfig {
     oneof variant {
