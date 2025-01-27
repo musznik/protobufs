@@ -359,6 +359,16 @@ message LocalStatsExtended {
    * psram total
    */
   optional uint32 tx_total_bytes = 9;
+
+  /*
+   * avg. RX packets/60min
+   */
+  float rx_avg_60_min = 10;
+
+  /*
+  * packer rx counter history over time
+  */
+  repeated uint32 rx_packet_history = 11;
 }
 
 /*

@@ -37,6 +37,7 @@
 *NodeModAdmin.current_max_channel_util_percent int_size:8
 *NodeModAdmin.current_polite_channel_util_percent int_size:8
 *NodeModAdmin.current_polite_duty_cycle_percent int_size:8
+*NodeModAdminConfig.rx_packet_history max_count:40
 
 *IdleGameKnownVillages.known max_count:10
 
@@ -60,3 +61,5 @@
 *IdleGameAction.quantity int_size:8
 *IdleGameAction.from_node_id_village int_size:8
 *IdleGameAction.to_node_id_village int_size:8
+
+*NodeModAdminConfig.rx_packet_history max_count:40

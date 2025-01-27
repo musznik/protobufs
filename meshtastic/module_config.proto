@@ -809,6 +809,17 @@ message ModuleConfig {
     * current polite duty cycle percent
     */
     uint32 current_polite_duty_cycle_percent = 13;
+
+    /*
+    * avg. RX packets/60min
+    */
+    float rx_avg_60_min = 14;
+
+    /*
+    * packer rx counter history over time
+    */
+    repeated uint32 rx_packet_history = 15;
+
   }
 
   message IdleGameKnownVillages {

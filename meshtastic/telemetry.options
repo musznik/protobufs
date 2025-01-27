@@ -9,3 +9,5 @@
 
 *HealthMetrics.heart_bpm int_size:8
 *HealthMetrics.spO2 int_size:8
+
+*LocalStatsExtended.rx_packet_history max_count:6
