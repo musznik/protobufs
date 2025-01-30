@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package meshtastic;
+
+option csharp_namespace = "Meshtastic.Protobufs";
+option go_package = "github.com/meshtastic/go/generated";
+option java_outer_classname = "OnDemandProtos";
+option java_package = "com.geeksville.mesh";
+option swift_prefix = "";
+
+message RxPacketHistory {
+    repeated uint32 rx_packet_history = 1;
+}
+
+enum OnDemandType {
+    UNKNOWN_TYPE = 0;
+    REQUEST_PACKET_RX_HISTORY = 1;
+    RESPONSE_PACKET_RX_HISTORY = 2;
+}
+
+message OnDemandRequest {
+    OnDemandType request_type = 1;
+}
+
+message OnDemandResponse {
+    OnDemandType response_type = 1;
+    oneof response_data {
+        RxPacketHistory rx_packet_history = 2;
+    }
+}
+
+message OnDemand {
+    uint32 packet_index = 1;
+    uint32 packet_total = 2;
+    oneof variant {
+        OnDemandRequest request = 3;
+        OnDemandResponse response = 4;
+    }
+}

@@ -1,0 +1,3 @@
+*packet_index int_size:8
+*packet_total int_size:8
+*RxPacketHistory.rx_packet_history max_count:40
