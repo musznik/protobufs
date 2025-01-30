@@ -231,6 +231,11 @@ enum PortNum {
   IDLE_GAME_APP = 322;
 
   /*
+   * OnDemand requests port
+   */
+  ON_DEMAND_APP = 354;
+
+  /*
    * Currently we limit port nums to no higher than this value
    */
   MAX = 511;
