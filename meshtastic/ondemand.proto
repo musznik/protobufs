@@ -12,10 +12,24 @@ message RxPacketHistory {
     repeated uint32 rx_packet_history = 1;
 }
 
+message NodeEntry {
+    uint32 node_id = 1;
+    string long_name = 2;
+    string short_name = 3;
+    fixed32 last_heard = 4;
+    float snr = 5;
+}
+
+message NodesList {
+    repeated NodeEntry node_list = 1;
+}
+
 enum OnDemandType {
     UNKNOWN_TYPE = 0;
     REQUEST_PACKET_RX_HISTORY = 1;
     RESPONSE_PACKET_RX_HISTORY = 2;
+    REQUEST_NODES_ONLINE = 3;
+    RESPONSE_NODES_ONLINE = 4;
 }
 
 message OnDemandRequest {
@@ -26,6 +40,7 @@ message OnDemandResponse {
     OnDemandType response_type = 1;
     oneof response_data {
         RxPacketHistory rx_packet_history = 2;
+        NodesList node_list = 3;
     }
 }
 

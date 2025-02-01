@@ -1,3 +1,6 @@
 *packet_index int_size:8
 *packet_total int_size:8
 *RxPacketHistory.rx_packet_history max_count:40
+*NodesList.node_list max_count:10
+*NodeEntry.long_name max_size:40
+*NodeEntry.short_name max_size:5
