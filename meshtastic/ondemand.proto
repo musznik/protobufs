@@ -24,12 +24,18 @@ message NodesList {
     repeated NodeEntry node_list = 1;
 }
 
+message Ping {
+    bool direct=1;
+}
+
 enum OnDemandType {
     UNKNOWN_TYPE = 0;
     REQUEST_PACKET_RX_HISTORY = 1;
     RESPONSE_PACKET_RX_HISTORY = 2;
     REQUEST_NODES_ONLINE = 3;
     RESPONSE_NODES_ONLINE = 4;
+    REQUEST_PING = 5;
+    RESPONSE_PING = 6;
 }
 
 message OnDemandRequest {
@@ -41,6 +47,7 @@ message OnDemandResponse {
     oneof response_data {
         RxPacketHistory rx_packet_history = 2;
         NodesList node_list = 3;
+        Ping ping = 4;
     }
 }
 
