@@ -12,6 +12,10 @@ message RxPacketHistory {
     repeated uint32 rx_packet_history = 1;
 }
 
+message RxAvgTimeHistory {
+    repeated uint32 rx_avg_history = 1;
+}
+
 message NodeEntry {
     uint32 node_id = 1;
     string long_name = 2;
@@ -24,9 +28,7 @@ message NodesList {
     repeated NodeEntry node_list = 1;
 }
 
-message Ping {
-    bool direct=1;
-}
+message Ping { }
 
 enum OnDemandType {
     UNKNOWN_TYPE = 0;
@@ -36,6 +38,8 @@ enum OnDemandType {
     RESPONSE_NODES_ONLINE = 4;
     REQUEST_PING = 5;
     RESPONSE_PING = 6;
+    REQUEST_RX_AVG_TIME = 7;
+    RESPONSE_RX_AVG_TIME = 8;
 }
 
 message OnDemandRequest {
@@ -48,12 +52,13 @@ message OnDemandResponse {
         RxPacketHistory rx_packet_history = 2;
         NodesList node_list = 3;
         Ping ping = 4;
+        RxAvgTimeHistory rx_avg_time_history = 5;
     }
 }
 
 message OnDemand {
-    uint32 packet_index = 1;
-    uint32 packet_total = 2;
+    optional uint32 packet_index = 1;
+    optional uint32 packet_total = 2;
     oneof variant {
         OnDemandRequest request = 3;
         OnDemandResponse response = 4;
