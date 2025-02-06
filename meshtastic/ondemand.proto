@@ -16,6 +16,15 @@ message RxAvgTimeHistory {
     repeated uint32 rx_avg_history = 1;
 }
 
+message PortCounterEntry {
+    uint32 port = 1;
+    uint32 count = 2;
+}
+
+message PortCountersHistory {
+    repeated PortCounterEntry port_counter_history = 1;
+}
+
 message NodeEntry {
     uint32 node_id = 1;
     string long_name = 2;
@@ -40,6 +49,8 @@ enum OnDemandType {
     RESPONSE_PING = 6;
     REQUEST_RX_AVG_TIME = 7;
     RESPONSE_RX_AVG_TIME = 8;
+    REQUEST_PORT_COUNTER_HISTORY = 9;
+    RESPONSE_PORT_COUNTER_HISTORY = 10;
 }
 
 message OnDemandRequest {
@@ -53,6 +64,7 @@ message OnDemandResponse {
         NodesList node_list = 3;
         Ping ping = 4;
         RxAvgTimeHistory rx_avg_time_history = 5;
+        PortCountersHistory port_counter_history = 6;
     }
 }
 

@@ -5,3 +5,4 @@
 *NodesList.node_list max_count:10
 *NodeEntry.long_name max_size:40
 *NodeEntry.short_name max_size:5
+*PortCountersHistory.port_counter_history max_count:20
