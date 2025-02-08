@@ -31,6 +31,7 @@ message NodeEntry {
     string short_name = 3;
     fixed32 last_heard = 4;
     float snr = 5;
+    uint32 hops = 6;
 }
 
 message NodesList {
