@@ -25,6 +25,15 @@ message PortCountersHistory {
     repeated PortCounterEntry port_counter_history = 1;
 }
 
+message AirActivityEntry {
+    uint32 tx_time = 1;
+    uint32 rx_time = 2;
+}
+
+message AirActivityHistory {
+    repeated AirActivityEntry air_activity_history = 1;
+}
+
 message NodeEntry {
     uint32 node_id = 1;
     string long_name = 2;
@@ -64,6 +73,8 @@ enum OnDemandType {
     RESPONSE_PORT_COUNTER_HISTORY = 10;
     REQUEST_PACKET_EXCHANGE_HISTORY=11;
     RESPONSE_PACKET_EXCHANGE_HISTORY=12;
+    REQUEST_AIR_ACTIVITY_HISTORY=13;
+    RESPONSE_AIR_ACTIVITY_HISTORY=14;
 }
 
 message OnDemandRequest {
@@ -79,6 +90,7 @@ message OnDemandResponse {
         RxAvgTimeHistory rx_avg_time_history = 5;
         PortCountersHistory port_counter_history = 6;
         ExchangeList exchange_packet_log = 7;
+        AirActivityHistory air_activity_history=8;
     }
 }
 
