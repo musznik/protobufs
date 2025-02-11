@@ -28,6 +28,7 @@ message PortCountersHistory {
 message AirActivityEntry {
     uint32 tx_time = 1;
     uint32 rx_time = 2;
+    uint32 rxBad_time = 3;   
 }
 
 message AirActivityHistory {

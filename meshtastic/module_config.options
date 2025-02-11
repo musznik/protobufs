@@ -61,5 +61,3 @@
 *IdleGameAction.quantity int_size:8
 *IdleGameAction.from_node_id_village int_size:8
 *IdleGameAction.to_node_id_village int_size:8
-
-*NodeModAdminConfig.rx_packet_history max_count:40
