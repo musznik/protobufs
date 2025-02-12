@@ -8,6 +8,36 @@ option java_outer_classname = "OnDemandProtos";
 option java_package = "com.geeksville.mesh";
 option swift_prefix = "";
 
+message FwPlusVersion {
+    uint32 version_number = 1;
+}
+
+message NodeStats {
+    optional uint32 battery_level = 1;
+    optional float voltage = 2;
+    optional float channel_utilization = 3;
+    optional float air_util_tx = 4;
+    optional uint32 uptime_seconds = 5;
+    optional uint32 num_packets_tx = 6;
+    optional uint32 num_packets_rx = 7;
+    optional uint32 num_packets_rx_bad = 8;
+    optional uint32 num_online_nodes = 9;
+    optional uint32 num_total_nodes = 10;
+    optional uint32 num_rx_dupe = 11;
+    optional uint32 num_tx_relay = 12;
+    optional uint32 num_tx_relay_canceled = 13;
+    optional uint32 reboots = 14;
+    optional uint32 memory_free_cheap = 15;
+    optional uint32 memory_total = 16;
+    optional uint32 cpu_usage_percent = 17;
+    optional uint32 flash_used_bytes = 18;
+    optional uint32 flash_total_bytes = 19;
+    optional uint32 memory_psram_free = 20;  
+    optional uint32 memory_psram_total = 21;
+    optional uint32 rx_total_bytes = 22;
+    optional uint32 tx_total_bytes = 23;
+}
+
 message RxPacketHistory {
     repeated uint32 rx_packet_history = 1;
 }
@@ -76,6 +106,10 @@ enum OnDemandType {
     RESPONSE_PACKET_EXCHANGE_HISTORY=12;
     REQUEST_AIR_ACTIVITY_HISTORY=13;
     RESPONSE_AIR_ACTIVITY_HISTORY=14;
+    REQUEST_NODE_STATS=15;
+    RESPONSE_NODE_STATS=16;
+    REQUEST_FW_PLUS_VERSION=17;
+    RESPONSE_FW_PLUS_VERSION=18;
 }
 
 message OnDemandRequest {
@@ -92,6 +126,8 @@ message OnDemandResponse {
         PortCountersHistory port_counter_history = 6;
         ExchangeList exchange_packet_log = 7;
         AirActivityHistory air_activity_history=8;
+        NodeStats node_stats=9;
+        FwPlusVersion fw_plus_version=10;
     }
 }
 
