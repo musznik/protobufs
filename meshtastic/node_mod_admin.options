@@ -5,4 +5,4 @@
 *NodeModAdmin.current_max_channel_util_percent int_size:8
 *NodeModAdmin.current_polite_channel_util_percent int_size:8
 *NodeModAdmin.current_polite_duty_cycle_percent int_size:8
- 
+*NodeModAdmin.auto_responder_text max_size:60

@@ -72,5 +72,23 @@ message NodeModAdmin {
    */
   uint32 current_polite_duty_cycle_percent = 13;
 
+  /*
+   * auto responder
+   */
+  bool auto_responder_enabled = 14;
 
+  /*
+   * auto responder text
+   */
+  string auto_responder_text = 15;
+
+    /*
+   * auto responder
+   */
+  bool auto_redirect_messages = 16;
+
+  /*
+   * auto responder text
+   */
+  uint32 auto_redirect_target_node_id = 17;
 }

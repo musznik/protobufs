@@ -30,13 +30,14 @@
 
 *NodeModConfig.text_status max_size:200
 
-*NodeModAdmin.additional_chutil int_size:8
-*NodeModAdmin.additional_txutil int_size:8
-*NodeModAdmin.additional_polite_channel_percent int_size:8
-*NodeModAdmin.additional_polite_duty_cycle_percent  int_size:8
-*NodeModAdmin.current_max_channel_util_percent int_size:8
-*NodeModAdmin.current_polite_channel_util_percent int_size:8
-*NodeModAdmin.current_polite_duty_cycle_percent int_size:8
+*NodeModAdminConfig.additional_chutil int_size:8
+*NodeModAdminConfig.additional_txutil int_size:8
+*NodeModAdminConfig.additional_polite_channel_percent int_size:8
+*NodeModAdminConfig.additional_polite_duty_cycle_percent  int_size:8
+*NodeModAdminConfig.current_max_channel_util_percent int_size:8
+*NodeModAdminConfig.current_polite_channel_util_percent int_size:8
+*NodeModAdminConfig.current_polite_duty_cycle_percent int_size:8
+*NodeModAdminConfig.auto_responder_text max_size:60
 *NodeModAdminConfig.rx_packet_history max_count:40
 
 *IdleGameKnownVillages.known max_count:10
