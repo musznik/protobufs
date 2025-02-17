@@ -118,7 +118,6 @@ enum OnDemandType {
     RESPONSE_NODE_STATS=16;
     REQUEST_FW_PLUS_VERSION=17;
     RESPONSE_FW_PLUS_VERSION=18;
-    UNKNOWN_ONDEMAND=19;
 }
 
 message OnDemandRequest {
