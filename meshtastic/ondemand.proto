@@ -36,6 +36,14 @@ message NodeStats {
     optional uint32 memory_psram_total = 21;
     optional uint32 rx_total_bytes = 22;
     optional uint32 tx_total_bytes = 23;
+    optional float ch1_voltage = 24;
+    optional float ch1_current = 25;
+    optional float ch2_voltage = 26;
+    optional float ch2_current = 27;
+    optional float ch3_voltage = 28;
+    optional float ch3_current = 29;
+    optional uint32 flood_counter = 30;
+    optional uint32 nexthop_counter = 31;
 }
 
 message RxPacketHistory {
@@ -110,6 +118,7 @@ enum OnDemandType {
     RESPONSE_NODE_STATS=16;
     REQUEST_FW_PLUS_VERSION=17;
     RESPONSE_FW_PLUS_VERSION=18;
+    UNKNOWN_ONDEMAND=19;
 }
 
 message OnDemandRequest {
