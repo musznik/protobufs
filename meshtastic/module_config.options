@@ -29,6 +29,7 @@
 *DetectionSensorConfig.detection_trigger_type max_size:8
 
 *NodeModConfig.text_status max_size:200
+*NodeModConfig.emoji max_size:4
 
 *NodeModAdminConfig.additional_chutil int_size:8
 *NodeModAdminConfig.additional_txutil int_size:8

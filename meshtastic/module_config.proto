@@ -745,6 +745,11 @@ message ModuleConfig {
     * user text status
     */
     string text_status = 1;
+
+    /* 
+    * node emoji
+    */
+    string emoji = 2;
   }
 
   message NodeModAdminConfig {
