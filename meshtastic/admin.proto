@@ -161,6 +161,18 @@ message AdminMessage {
     IDLEGAME_ADMIN_CONFIG = 21;
   }
 
+  enum BackupLocation {
+    /*
+     * Backup to the internal flash
+     */
+    FLASH = 0;
+
+    /*
+     * Backup to the SD card
+     */
+    SD = 1;
+  }
+
   /*
    * TODO: REPLACE
    */
@@ -277,6 +289,20 @@ message AdminMessage {
      */
     uint32 set_scale = 23;
 
+    /*
+     * Backup the node's preferences
+     */
+    BackupLocation backup_preferences = 24;
+
+    /*
+     * Restore the node's preferences
+     */
+    BackupLocation restore_preferences = 25;
+
+    /*
+     * Remove backups of the node's preferences
+     */
+    BackupLocation remove_backup_preferences = 26;
     /*
      * Set the owner for this node
      */
