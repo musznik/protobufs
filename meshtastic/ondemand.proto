@@ -44,6 +44,7 @@ message NodeStats {
     optional float ch3_current = 29;
     optional uint32 flood_counter = 30;
     optional uint32 nexthop_counter = 31;
+    optional string firmware_version = 32;
 }
 
 message RxPacketHistory {

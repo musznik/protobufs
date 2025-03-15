@@ -8,3 +8,4 @@
 *PortCountersHistory.port_counter_history max_count:20
 *ExchangeList.exchange_list max_count:12
 *AirActivityHistory.air_activity_history max_count:10
+*NodeStats.firmware_version max_size:18
