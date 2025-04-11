@@ -108,7 +108,10 @@ message NodesList {
     repeated NodeEntry node_list = 1;
 }
 
-message Ping { }
+message Ping { 
+    optional int32 rx_rssi = 1;
+    optional float snr = 2;
+}
 
 enum OnDemandType {
     UNKNOWN_TYPE = 0;
