@@ -390,65 +390,6 @@ message LocalStatsExtended {
   repeated uint32 rx_packet_history = 11;
 }
 
-/*
- * Local device mesh statistics
- */
-message LocalStatsExtended {
-  /*
-   * free cheap memory
-   */
-  optional uint32 memory_free_cheap = 1;
-
-  /*
-   * total memory
-   */
-  optional uint32 memory_total = 2;
-
-  /*
-   * cpu usage percent
-   */
-  optional uint32 cpu_usage_percent = 3;
-
-  /*
-   * free space on flash
-   */
-  optional uint32 flash_used_bytes = 4;
-
-  /*
-   * total available space
-   */
-  optional uint32 flash_total_bytes = 5;
-
-  /*
-   * psram used
-   */
-  optional uint32 memory_psram_free = 6;  
-
-  /*
-   * psram total
-   */
-  optional uint32 memory_psram_total = 7;
-
-    /*
-   * psram total
-   */
-  optional uint32 rx_total_bytes = 8;
-
-   /*
-   * psram total
-   */
-  optional uint32 tx_total_bytes = 9;
-
-  /*
-   * avg. RX packets/60min
-   */
-  float rx_avg_60_min = 10;
-
-  /*
-  * packer rx counter history over time
-  */
-  repeated uint32 rx_packet_history = 11;
-}
 
 /*
  * Health telemetry metrics
