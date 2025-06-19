@@ -95,6 +95,11 @@ message ModuleConfig {
      * Bits of precision for the location sent (default of 32 is full precision).
      */
     uint32 position_precision = 2;
+
+    /*
+     * Whether we have opted-in to report our location to the map
+     */
+    bool should_report_location = 3;
   }
 
   /*
@@ -331,6 +336,9 @@ message ModuleConfig {
       CALTOPO = 5;
       // Ecowitt WS85 weather station
       WS85 = 6;
+      // VE.Direct is a serial protocol used by Victron Energy products
+      // https://beta.ivc.no/wiki/index.php/Victron_VE_Direct_DIY_Cable
+      VE_DIRECT = 7;
     }
 
     /*
