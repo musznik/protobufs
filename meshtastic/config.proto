@@ -666,14 +666,14 @@ message Config {
       OLED_SH1106 = 2;
 
       /*
-       * Can not be auto detected but set by proto. Used for 128x128 screens
+       * Can not be auto detected but set by proto. Used for 128x64 screens
        */
       OLED_SH1107 = 3;
 
       /*
-       * Can not be auto detected but set by proto. Used for 128x64 screens
+       * Can not be auto detected but set by proto. Used for 128x128 screens
        */
-      OLED_SH1107_128_64 = 4;
+      OLED_SH1107_128_128 = 4;
     }
 
     /*
@@ -698,7 +698,7 @@ message Config {
      * If this is set, the displayed compass will always point north. if unset, the old behaviour
      * (top of display is heading direction) is used.
      */
-    bool compass_north_top = 4;
+    bool compass_north_top = 4 [deprecated = true];
 
     /*
      * Flip screen vertically, for cases that mount the screen upside down
