@@ -18,4 +18,9 @@ message NodeMod {
   * node emoji
   */
   optional string emoji = 2;
+
+ /* 
+  * webmesh heartbeat, node supports webmesh server
+  */
+  optional bool webmesh_heartbeat = 3;
 }
