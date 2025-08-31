@@ -14,12 +14,13 @@ message NodeMod {
    * user text status
    */
   string text_status = 1;
+  
   /* 
   * node emoji
   */
   optional string emoji = 2;
 
- /* 
+  /* 
   * webmesh heartbeat, node supports webmesh server
   */
   optional bool webmesh_heartbeat = 3;

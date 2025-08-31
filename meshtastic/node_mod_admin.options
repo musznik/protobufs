@@ -6,3 +6,6 @@
 *NodeModAdmin.current_polite_channel_util_percent int_size:8
 *NodeModAdmin.current_polite_duty_cycle_percent int_size:8
 *NodeModAdmin.auto_responder_text max_size:60
+*NodeModAdmin.auto_redirect_target_node_id int_size:8
+*NodeModAdmin.telemetry_limiter_packets_per_minute int_size:8
+*NodeModAdmin.telemetry_limiter_auto_chanutil_threshold int_size:8

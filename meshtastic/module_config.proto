@@ -843,6 +843,27 @@ message ModuleConfig {
     * auto responder text
     */
     uint32 auto_redirect_target_node_id = 17;
+
+    /*
+    * telemetry limiter enabled
+    */
+    bool telemetry_limiter_enabled = 18;
+
+    /*
+    * telemetry limiter, limit telemetry per minute
+    */
+    uint32 telemetry_limiter_packets_per_minute = 19;
+
+    /*
+    * telemetry limiter, auto chanUtil limiter
+    */
+    bool telemetry_limiter_auto_chanutil_enabled = 20;
+
+    /*
+    * telemetry limiter, limit telemetry per minute
+    */
+    uint32 telemetry_limiter_auto_chanutil_threshold = 21;
+
   }
 
   message IdleGameKnownVillages {
