@@ -864,6 +864,16 @@ message ModuleConfig {
     */
     uint32 telemetry_limiter_auto_chanutil_threshold = 21;
 
+    /*
+    * position limiter, enabled
+    */
+    bool position_limiter_enabled = 22;
+
+    /*
+    * position limiter, time threshold
+    */
+    uint32 position_limiter_time_minutes_threshold = 23;
+
   }
 
   message IdleGameKnownVillages {
@@ -995,6 +1005,7 @@ message IdleGameAction {
     NodeModAdminConfig node_mod_admin = 21;
 
     IdleGameConfig idle_game = 22;
+    
   }
 }
 

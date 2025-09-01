@@ -112,4 +112,14 @@ message NodeModAdmin {
   */
   uint32 telemetry_limiter_auto_chanutil_threshold = 21;
 
+  /*
+   * position limiter, enabled
+   */
+  bool position_limiter_enabled = 22;
+
+  /*
+  * position limiter, time threshold
+  */
+  uint32 position_limiter_time_minutes_threshold = 23;
+
 }

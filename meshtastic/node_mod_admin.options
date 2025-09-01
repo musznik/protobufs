@@ -9,3 +9,4 @@
 *NodeModAdmin.auto_redirect_target_node_id int_size:8
 *NodeModAdmin.telemetry_limiter_packets_per_minute int_size:8
 *NodeModAdmin.telemetry_limiter_auto_chanutil_threshold int_size:8
+*NodeModAdmin.position_limiter_time_minutes_threshold int_size:8
