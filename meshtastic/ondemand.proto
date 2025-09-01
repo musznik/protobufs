@@ -48,6 +48,8 @@ message NodeStats {
     optional uint32 blocked_by_hoplimit = 33;
     optional uint32 fw_plus_version = 34;
     optional uint32 rebroadcast_mode = 35;
+    optional bool telemetry_limiter_enabled = 36;
+    optional bool position_limiter_enabled = 37; 
 }
 
 message RxPacketHistory {
