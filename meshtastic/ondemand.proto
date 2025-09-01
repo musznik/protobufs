@@ -140,6 +140,7 @@ enum OnDemandType {
     RESPONSE_ROUTING_ERRORS=20;
     REQUEST_PING_ACK = 21;
     RESPONSE_PING_ACK = 22;
+    REQUEST_NODES_DIRECT_ONLINE = 23;
 }
 
 message OnDemandRequest {
