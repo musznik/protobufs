@@ -95,6 +95,9 @@ message NodeEntry {
     fixed32 last_heard = 4;
     float snr = 5;
     uint32 hops = 6;
+    int32 rx_rssi = 7;
+    optional sfixed32 latitude_i = 8;
+    optional sfixed32 longitude_i = 9;
 }
 
 message ExchangeEntry {
