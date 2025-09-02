@@ -42,7 +42,7 @@
 *NodeModAdminConfig.rx_packet_history max_count:40
 *NodeModAdminConfig.telemetry_limiter_packets_per_minute int_size:8
 *NodeModAdminConfig.telemetry_limiter_auto_chanutil_threshold int_size:8
-*NodeModAdminConfig.position_limiter_time_minutes_threshold int_size:8
+
 
 *IdleGameKnownVillages.known max_count:10
 
