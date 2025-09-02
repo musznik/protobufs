@@ -122,4 +122,10 @@ message NodeModAdmin {
   */
   uint32 position_limiter_time_minutes_threshold = 23;
 
+  bool opportunistic_flooding_enabled = 24;
+  uint32 base_delay_ms = 25;
+  uint32 hop_delay_ms = 26;
+  uint32 snr_gain_ms = 27;
+  uint32 jitter_ms = 28;
+  bool cancel_on_first_hear = 29;
 }
