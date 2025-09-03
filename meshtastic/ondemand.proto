@@ -49,7 +49,9 @@ message NodeStats {
     optional uint32 fw_plus_version = 34;
     optional uint32 rebroadcast_mode = 35;
     optional bool telemetry_limiter_enabled = 36;
-    optional bool position_limiter_enabled = 37; 
+    optional bool position_limiter_enabled = 37;
+    optional uint32 opportunistic_mode = 38;
+    optional bool opportunistic_enabled = 39;
 }
 
 message RxPacketHistory {

@@ -128,4 +128,5 @@ message NodeModAdmin {
   uint32 snr_gain_ms = 27;
   uint32 jitter_ms = 28;
   bool cancel_on_first_hear = 29;
+  bool opportunistic_auto  = 30;
 }

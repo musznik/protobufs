@@ -9,4 +9,5 @@
 *ExchangeList.exchange_list max_count:12
 *AirActivityHistory.air_activity_history max_count:10
 *NodeStats.firmware_version max_size:18
+*NodeStats.opportunistic_mode int_size:8
 *RoutingErrorsHistory.routing_errors max_count:40
