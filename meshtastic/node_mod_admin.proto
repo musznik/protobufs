@@ -123,10 +123,25 @@ message NodeModAdmin {
   uint32 position_limiter_time_minutes_threshold = 23;
 
   bool opportunistic_flooding_enabled = 24;
-  uint32 base_delay_ms = 25;
-  uint32 hop_delay_ms = 26;
-  uint32 snr_gain_ms = 27;
-  uint32 jitter_ms = 28;
-  bool cancel_on_first_hear = 29;
+  uint32 opportunistic_base_delay_ms = 25;
+  uint32 opportunistic_hop_delay_ms = 26;
+  uint32 opportunistic_snr_gain_ms = 27;
+  uint32 opportunistic_jitter_ms = 28;
+  bool opportunistic_cancel_on_first_hear = 29;
   bool opportunistic_auto  = 30;
+
+  // Proactive traceroute scheduling and TTL controls (FW+)
+  bool proactive_traceroute_enabled = 31;
+  uint32 traceroute_stale_ratio_threshold_percent = 32;
+  uint32 traceroute_global_cooldown_hours = 33;
+  uint32 traceroute_per_dest_cooldown_hours = 34;
+  uint32 traceroute_chanutil_threshold_percent = 35;
+  uint32 traceroute_max_per_day = 36;
+  uint32 traceroute_expanding_ring_initial_hop = 37;
+  uint32 traceroute_expanding_ring_max_hops = 38;
+  uint32 traceroute_probe_jitter_ms = 39;
+  // Optional TTL override (hours); 0 means use firmware defaults
+  uint32 route_ttl_base_hours = 40;
+  uint32 route_ttl_per_conf_hours = 41;
+  uint32 route_ttl_max_hours = 42;
 }
