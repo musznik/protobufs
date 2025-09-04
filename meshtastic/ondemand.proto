@@ -146,6 +146,8 @@ enum OnDemandType {
     REQUEST_PING_ACK = 21;
     RESPONSE_PING_ACK = 22;
     REQUEST_NODES_DIRECT_ONLINE = 23;
+    REQUEST_ROUTING_TABLE = 24;
+    RESPONSE_ROUTING_TABLE = 25;
 }
 
 message OnDemandRequest {
@@ -165,6 +167,7 @@ message OnDemandResponse {
         NodeStats node_stats=9;
         FwPlusVersion fw_plus_version=10;
         RoutingErrorsHistory routing_errors=11;
+        RoutingTable routing_table=12;
     }
 }
 
@@ -175,4 +178,17 @@ message OnDemand {
         OnDemandRequest request = 3;
         OnDemandResponse response = 4;
     }
+}
+
+// Routing table structures for UI
+message RoutingTableEntry {
+    uint32 dest = 1;
+    uint32 next_hop = 2;          // last-byte id of next hop
+    float cost = 3;               // aggregated ETX-like cost
+    uint32 confidence = 4;        // how sure we are
+    uint32 age_secs = 5;          // age of entry in seconds
+}
+
+message RoutingTable {
+    repeated RoutingTableEntry routes = 1;
 }
