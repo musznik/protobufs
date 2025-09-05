@@ -144,4 +144,11 @@ message NodeModAdmin {
   uint32 route_ttl_base_hours = 40;
   uint32 route_ttl_per_conf_hours = 41;
   uint32 route_ttl_max_hours = 42;
+
+  // Routing learning thresholds (FW+)
+  // Minimal confidence required to use a learned route. 0 means firmware default (1).
+  uint32 min_confidence_to_use = 43;
+  // Hysteresis threshold for next-hop promotion in tenths of a cost unit (ETX).
+  // 0 means firmware default (5 => 0.5 cost units).
+  uint32 hysteresis_cost_threshold_tenths = 44;
 }
