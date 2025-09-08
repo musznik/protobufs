@@ -151,4 +151,11 @@ message NodeModAdmin {
   // Hysteresis threshold for next-hop promotion in tenths of a cost unit (ETX).
   // 0 means firmware default (5 => 0.5 cost units).
   uint32 hysteresis_cost_threshold_tenths = 44;
+
+  // fw+ HEARD sampling (texts only for now)
+  bool heard_sampling_enabled_texts = 45;
+  uint32 heard_sample_percent_texts = 46;   // 0-100
+  uint32 heard_window_ms = 47;              // aggregation window
+  uint32 heard_max_reports_per_agg = 48;    // cap per aggregate
+  uint32 heard_max_active_keys = 49;        // cap active aggregates
 }
