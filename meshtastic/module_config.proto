@@ -911,6 +911,9 @@ message ModuleConfig {
     // 0 means firmware default (5 => 0.5 cost units).
     uint32 hysteresis_cost_threshold_tenths = 44;
 
+    // fw+ Force disable HTTPS web server regardless of automation. Default false (HTTPS enabled).
+    // When true, firmware must not start HTTPS even if PSRAM is available.
+    bool force_disable_https = 45; // fw+
   }
 
   message IdleGameKnownVillages {
