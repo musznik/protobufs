@@ -1741,6 +1741,12 @@ enum FirmwareEdition {
   /*
    * Placeholder for DIY and unofficial events
    */
+
+  /*
+   * Firmware Plus
+   */
+  FIRMWARE_PLUS = 51;
+
   DIY_EDITION = 127;
 }
 
