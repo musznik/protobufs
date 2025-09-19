@@ -601,8 +601,7 @@ message Config {
      * Deprecated in 2.7.4: Unused
      */
     enum DeprecatedGpsCoordinateFormat {
-      //fw+ Placeholder to satisfy proto3 enum requirement
-      GPS_FORMAT_UNUSED = 0 [deprecated = true];
+      UNUSED = 0;
     }
     
     /*
