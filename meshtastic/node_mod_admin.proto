@@ -156,4 +156,7 @@ message NodeModAdmin {
     // When true, firmware must not start HTTPS even if PSRAM is available.
     bool force_disable_https = 45; // fw+
 
+  // fw+ Allow router to emit CA/DR control-only custody signals
+  bool emit_custody_control_signals = 46; // fw+
+
 }

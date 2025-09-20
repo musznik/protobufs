@@ -509,6 +509,9 @@ message ModuleConfig {
      * Set to true to let this node act as a server that stores received messages and resends them upon request.
      */
     bool is_server = 6;
+
+    // fw+ Emit FW+ custody control signals (CA/DR) for S&F; ignored by stock nodes
+    bool emit_control_signals = 7; // fw+
   }
 
   /*
