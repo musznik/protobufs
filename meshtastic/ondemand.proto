@@ -148,6 +148,9 @@ enum OnDemandType {
     REQUEST_NODES_DIRECT_ONLINE = 23;
     REQUEST_ROUTING_TABLE = 24;
     RESPONSE_ROUTING_TABLE = 25;
+    //fw+ S&F custody status
+    REQUEST_SF_STATUS = 26; //fw+
+    RESPONSE_SF_STATUS = 27; //fw+
 }
 
 message OnDemandRequest {
@@ -168,6 +171,7 @@ message OnDemandResponse {
         FwPlusVersion fw_plus_version=10;
         RoutingErrorsHistory routing_errors=11;
         RoutingTable routing_table=12;
+        SFCustodyStatus sf_status=13; //fw+
     }
 }
 
@@ -178,6 +182,20 @@ message OnDemand {
         OnDemandRequest request = 3;
         OnDemandResponse response = 4;
     }
+}
+
+//fw+ Compact status of Store&Forward server (custody mode)
+message SFCustodyStatus {
+    bool server_active = 1;                  // whether S&F server is enabled on this node
+    uint32 active_dm = 2;                    // number of active DM schedules
+    uint32 active_broadcasts = 3;            // number of active broadcast schedules
+    uint32 delivered_total = 4;              // total DMs marked delivered
+    uint32 claimed_total = 5;                // total DMs claimed by other servers
+    uint32 dm_max_tries = 6;                 // configuration: maximum DM attempts
+    float dm_backoff_factor = 7;             // configuration: exponential backoff factor
+    uint32 min_retry_spacing_ms = 8;         // configuration: min spacing between retries for same id
+    uint32 busy_retry_ms = 9;                // configuration: retry delay when channel busy
+    uint32 heartbeat_interval = 10;          // heartbeat interval (secs), if enabled
 }
 
 // Routing table structures for UI
