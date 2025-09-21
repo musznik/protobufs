@@ -923,6 +923,15 @@ message ModuleConfig {
     // fw+ Force disable HTTPS web server regardless of automation. Default false (HTTPS enabled).
     // When true, firmware must not start HTTPS even if PSRAM is available.
     bool force_disable_https = 45; // fw+
+ 
+    // fw+ Allow router to emit CA/DR control-only custody signals
+    bool emit_custody_control_signals = 46; // fw+
+
+    // fw+ Dense/problematic terrain pacing knobs for custody delivery (optional; auto-dense still applies)
+    // Minimum retry spacing in seconds in dense environments (0 => default 90s)
+    uint32 dense_min_retry_secs = 47; // fw+
+    // Initial delivery wait cap in seconds in dense environments (0 => default 45s)
+    uint32 dense_initial_cap_secs = 48; // fw+
   }
 
   message IdleGameKnownVillages {
