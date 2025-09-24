@@ -243,6 +243,9 @@ enum PortNum {
    */
   NODE_MOD_APP = 278;
 
+  // FW+ custody control channel (private; ignored by stock apps)
+  FWPLUS_CUSTODY_APP = 279; // fw+
+
   /*
    * IdleGame port
    */
