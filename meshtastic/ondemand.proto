@@ -196,6 +196,21 @@ message SFCustodyStatus {
     uint32 min_retry_spacing_ms = 8;         // configuration: min spacing between retries for same id
     uint32 busy_retry_ms = 9;                // configuration: retry delay when channel busy
     uint32 heartbeat_interval = 10;          // heartbeat interval (secs), if enabled
+
+    // fw+ custody control counters/timestamps (emitted by this node)
+    uint32 ca_count = 11;                    // total Custody ACK (CA) emitted
+    uint32 cr_count = 12;                    // total Custody Claim (CR) emitted
+    uint32 dr_count = 13;                    // total Delivered Report (DR) emitted
+    uint32 df_count = 14;                    // total Delivery Failed (DF) emitted
+    uint32 last_ca_ms = 15;                  // last CA emit time (uptime ms)
+    uint32 last_cr_ms = 16;                  // last CR emit time (uptime ms)
+    uint32 last_dr_ms = 17;                  // last DR emit time (uptime ms)
+    uint32 last_df_ms = 18;                  // last DF emit time (uptime ms)
+
+    // fw+ optional pacing/cap exposure for UI
+    uint32 max_active_dm = 19;               // global DM concurrency cap
+    uint32 per_dest_min_spacing_ms = 20;     // baseline per-destination spacing
+    uint32 dest_cooldown_ms = 21;            // per-destination cooldown after DF
 }
 
 // Routing table structures for UI
