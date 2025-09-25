@@ -148,6 +148,9 @@ enum OnDemandType {
     REQUEST_NODES_DIRECT_ONLINE = 23;
     REQUEST_ROUTING_TABLE = 24;
     RESPONSE_ROUTING_TABLE = 25;
+    //fw+ DTN overlay stats
+    REQUEST_DTN_OVERLAY_STATS = 26;
+    RESPONSE_DTN_OVERLAY_STATS = 27;
 }
 
 message OnDemandRequest {
@@ -168,6 +171,8 @@ message OnDemandResponse {
         FwPlusVersion fw_plus_version=10;
         RoutingErrorsHistory routing_errors=11;
         RoutingTable routing_table=12;
+        //fw+ DTN overlay stats response
+        DtnOverlayStats dtn_overlay_stats=13;
     }
 }
 
@@ -191,4 +196,30 @@ message RoutingTableEntry {
 
 message RoutingTable {
     repeated RoutingTableEntry routes = 1;
+}
+
+//fw+ DTN overlay statistics structure for UI/diagnostics
+message DtnOverlayStats {
+    // Current queue size of pending entries
+    optional uint32 pending_count = 1;
+    // Total overlay forwards attempted
+    optional uint32 forwards_attempted = 2;
+    // Total native DM fallbacks attempted
+    optional uint32 fallbacks_attempted = 3;
+    // Receipts emitted by this node (DELIVERED/PROGRESSED/EXPIRED)
+    optional uint32 receipts_emitted = 4;
+    // Receipts received by this node for its originated messages
+    optional uint32 receipts_received = 5;
+    // Entries expired by deadline
+    optional uint32 expired = 6;
+    // Entries abandoned due to max tries
+    optional uint32 give_ups = 7;
+    // Milestone progress notifications sent
+    optional uint32 milestones_sent = 8;
+    // FW+ probe packets sent near deadlines
+    optional uint32 probes_sent = 9;
+    // Whether DTN overlay is enabled via config
+    optional bool enabled = 10;
+    // Seconds since last forward attempt (0 if none)
+    optional uint32 last_forward_age_secs = 11;
 }
