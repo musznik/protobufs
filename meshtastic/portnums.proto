@@ -246,6 +246,9 @@ enum PortNum {
   // FW+ custody control channel (private; ignored by stock apps)
   FWPLUS_CUSTODY_APP = 279; // fw+
 
+  // FW+ DTN overlay data/receipts port (private; ignored by stock apps)
+  FWPLUS_DTN_APP = 280; // fw+
+
   /*
    * IdleGame port
    */

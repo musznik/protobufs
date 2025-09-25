@@ -942,6 +942,32 @@ message ModuleConfig {
     uint32 ca_near_grace_ms = 51; // fw+
   }
 
+  // fw+ DTN overlay configuration
+  message DtnOverlayConfig {
+    // Enable FW+ DTN overlay module
+    bool enabled = 1;
+    // Absolute TTL in minutes for DM overlay deliveries (default 5)
+    uint32 ttl_minutes = 2;
+    // Initial delay base in milliseconds (default 8000)
+    uint32 initial_delay_base_ms = 3;
+    // Retry backoff base in milliseconds (default 60000)
+    uint32 retry_backoff_ms = 4;
+    // Maximum tries before declare failed (default 3)
+    uint32 max_tries = 5;
+    // Enable late proxy fallback to native DM near deadline
+    bool late_fallback_enabled = 6;
+    // Fallback window portion of TTL (percent of TTL near deadline, default 20)
+    uint32 fallback_tail_percent = 7;
+    // Enable milestone progress receipts (rare, for debugging/telemetry)
+    bool milestones_enabled = 8;
+    // Minimum spacing between attempts to the same destination (ms; default 30000)
+    uint32 per_dest_min_spacing_ms = 9;
+    // Global cap of concurrently active DTN DMs per node (default 2)
+    uint32 max_active_dm = 10;
+    // Probe FW+ capability (OnDemand) near deadline if dest capability unknown
+    bool probe_fwplus_near_deadline = 11;
+  }
+
   message IdleGameKnownVillages {
     repeated IdleGameState known = 1;
   }
@@ -1071,6 +1097,8 @@ message IdleGameAction {
     NodeModAdminConfig node_mod_admin = 21;
 
     IdleGameConfig idle_game = 22;
+    // fw+ DTN overlay config
+    DtnOverlayConfig dtn_overlay = 23;
     
   }
 }

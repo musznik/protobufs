@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package meshtastic; // keep under meshtastic package like other FW+ protos
+
+option csharp_namespace = "Meshtastic.Protobufs";
+option go_package = "github.com/meshtastic/go/generated";
+option java_outer_classname = "FwplusDtnProtos";
+option java_package = "com.geeksville.mesh";
+option swift_prefix = "";
+
+// fw+ DTN overlay messages. Transported over port FWPLUS_DTN_APP.
+message FwplusDtnData {
+  // Original MeshPacket id at source
+  uint32 orig_id = 1;
+  // Original source and destination node numbers
+  uint32 orig_from = 2;
+  uint32 orig_to = 3;
+  // Channel index the original packet used
+  uint32 channel = 4;
+  // Original receive time at the carrier (seconds since epoch or mesh time)
+  uint32 orig_rx_time = 5;
+  // Absolute deadline (millis since boot or epoch depending on firmware timebase)
+  uint32 deadline_ms = 6;
+  // Whether payload is encrypted ciphertext (true) or plaintext (false)
+  bool is_encrypted = 7;
+  // Allows late proxy fallback to native DM near deadline
+  bool allow_proxy_fallback = 8;
+  // Payload bytes: plaintext or ciphertext 1:1 from original
+  bytes payload = 9;
+}
+
+enum FwplusDtnStatus {
+  FWPLUS_DTN_STATUS_UNKNOWN = 0;
+  FWPLUS_DTN_STATUS_DELIVERED = 1;
+  FWPLUS_DTN_STATUS_FAILED = 2;
+  FWPLUS_DTN_STATUS_EXPIRED = 3;
+  // Intermediate progress update (optional, for telemetry/debug)
+  FWPLUS_DTN_STATUS_PROGRESSED = 4;
+}
+
+message FwplusDtnReceipt {
+  uint32 orig_id = 1;
+  FwplusDtnStatus status = 2;
+  uint32 reason = 3; // optional routing error / failure reason
+}
+
+// Top-level container for FW+ DTN app messages
+message FwplusDtn {
+  oneof variant {
+    FwplusDtnData data = 1;
+    FwplusDtnReceipt receipt = 2;
+  }
+}
+
+
