@@ -137,14 +137,19 @@ message LocalModuleConfig {
   ModuleConfig.NodeModConfig nodemod = 20;
 
   /*
-   * NodeModAdmin Config
-   */
+  * NodeModAdmin Config
+  */
   ModuleConfig.NodeModAdminConfig nodemodadmin = 21;
 
   /*
-   * IdleGameConfig Config
-   */
+  * IdleGameConfig Config
+  */
   ModuleConfig.IdleGameConfig idlegame = 22;
+
+  /*
+  * FW+ DTN Config
+  */
+  ModuleConfig.DtnOverlayConfig dtn_overlay = 23;
 
   /*
    * A version integer used to invalidate old save files when we make

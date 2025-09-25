@@ -923,23 +923,6 @@ message ModuleConfig {
     // fw+ Force disable HTTPS web server regardless of automation. Default false (HTTPS enabled).
     // When true, firmware must not start HTTPS even if PSRAM is available.
     bool force_disable_https = 45; // fw+
- 
-    // fw+ Allow router to emit CA/DR control-only custody signals
-    bool emit_custody_control_signals = 46; // fw+
-
-    // fw+ Dense/problematic terrain pacing knobs for custody delivery (optional; auto-dense still applies)
-    // Minimum retry spacing in seconds in dense environments (0 => default 90s)
-    uint32 dense_min_retry_secs = 47; // fw+
-    // Initial delivery wait cap in seconds in dense environments (0 => default 45s)
-    uint32 dense_initial_cap_secs = 48; // fw+
-
-    // fw+ Adaptive CA for encrypted DMs: defer CA when source is near and route is healthy
-    // Enable deferring CA for encrypted DMs (default true when field absent)
-    bool defer_ca_if_near = 49; // fw+
-    // Treat source within this many hops as "near" (0/1 recommended; default 1 when field absent)
-    uint32 ca_near_hops_threshold = 50; // fw+
-    // Grace window before emitting CA when near and healthy (milliseconds). Default 12000.
-    uint32 ca_near_grace_ms = 51; // fw+
   }
 
   // fw+ DTN overlay configuration
@@ -1097,7 +1080,7 @@ message IdleGameAction {
     NodeModAdminConfig node_mod_admin = 21;
 
     IdleGameConfig idle_game = 22;
-    // fw+ DTN overlay config
+
     DtnOverlayConfig dtn_overlay = 23;
     
   }
