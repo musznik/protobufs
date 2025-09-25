@@ -152,12 +152,14 @@ message AdminMessage {
      */
     PAXCOUNTER_CONFIG = 12;
 
-
+    //fw+
     NODEMOD_CONFIG = 19;
 
     NODEMOD_ADMIN_CONFIG = 20;
 
     IDLEGAME_ADMIN_CONFIG = 21;
+
+    DTN_OVERLAY_CONFIG = 22;
   }
 
   enum BackupLocation {
