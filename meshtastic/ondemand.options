@@ -13,6 +13,18 @@
 *RoutingErrorsHistory.routing_errors max_count:40
 *RoutingTable.routes max_count:40
 
+# fw+ DTN overlay stats sizes
+*DtnOverlayStats.pending_count int_size:16
+*DtnOverlayStats.forwards_attempted int_size:16
+*DtnOverlayStats.fallbacks_attempted int_size:16
+*DtnOverlayStats.receipts_emitted int_size:16
+*DtnOverlayStats.receipts_received int_size:16
+*DtnOverlayStats.expired int_size:16
+*DtnOverlayStats.give_ups int_size:16
+*DtnOverlayStats.milestones_sent int_size:16
+*DtnOverlayStats.probes_sent int_size:16
+*DtnOverlayStats.last_forward_age_secs int_size:16
+
 # fw+ Broadcast Assist stats sizes
 *BroadcastAssistStats.reflood_attempts int_size:16
 *BroadcastAssistStats.reflood_sent int_size:16

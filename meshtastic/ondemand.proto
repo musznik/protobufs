@@ -231,11 +231,18 @@ message DtnOverlayStats {
 
 // fw+ Broadcast Assist statistics for UI/diagnostics
 message BroadcastAssistStats {
+    // Whether Broadcast Assist module is currently enabled
     optional bool enabled = 1;
+    // Number of reflood decisions considered (attempted to schedule/send) in this session
     optional uint32 reflood_attempts = 2;
+    // Number of reflood packets actually sent to the mesh
     optional uint32 reflood_sent = 3;
+    // Refloods suppressed due to duplicate suppression threshold within window_ms
     optional uint32 suppressed_dup = 4;
+    // Refloods suppressed due to neighbor degree gating (hard threshold or probabilistic)
     optional uint32 suppressed_degree = 5;
+    // Refloods suppressed by airtime/channel-utilization guard
     optional uint32 suppressed_airtime = 6;
+    // Age in seconds since the last reflood was sent (0 if none yet)
     optional uint32 last_reflood_age_secs = 7;
 }
