@@ -1,3 +1,4 @@
 *FwplusDtnData.payload max_size:240
 *FwplusDtnReceipt.reason int_size:8
+*FwplusDtnData.channel int_size:8
 
