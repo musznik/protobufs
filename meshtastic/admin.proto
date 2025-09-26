@@ -160,6 +160,8 @@ message AdminMessage {
     IDLEGAME_ADMIN_CONFIG = 21;
 
     DTN_OVERLAY_CONFIG = 22;
+    // fw+ Broadcast Assist module config
+    BROADCAST_ASSIST_CONFIG = 23;
   }
 
   enum BackupLocation {

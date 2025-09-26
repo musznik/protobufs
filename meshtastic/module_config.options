@@ -66,3 +66,18 @@
 *IdleGameAction.quantity int_size:8
 *IdleGameAction.from_node_id_village int_size:8
 *IdleGameAction.to_node_id_village int_size:8
+
+# fw+ BroadcastAssistConfig sizing
+*BroadcastAssistConfig.degree_threshold int_size:8
+*BroadcastAssistConfig.dup_threshold int_size:8
+*BroadcastAssistConfig.window_ms int_size:16
+*BroadcastAssistConfig.max_extra_hops int_size:8
+*BroadcastAssistConfig.jitter_ms int_size:16
+*BroadcastAssistConfig.allowed_ports max_count:8
+
+# fw+ DtnOverlayConfig sizing
+*DtnOverlayConfig.ttl_minutes int_size:16
+*DtnOverlayConfig.max_tries int_size:8
+*DtnOverlayConfig.fallback_tail_percent int_size:8
+*DtnOverlayConfig.per_dest_min_spacing_ms int_size:16
+*DtnOverlayConfig.max_active_dm int_size:8

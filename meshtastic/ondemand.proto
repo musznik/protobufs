@@ -151,6 +151,9 @@ enum OnDemandType {
     //fw+ DTN overlay stats
     REQUEST_DTN_OVERLAY_STATS = 26;
     RESPONSE_DTN_OVERLAY_STATS = 27;
+    // fw+ Broadcast Assist stats
+    REQUEST_BROADCAST_ASSIST_STATS = 28;
+    RESPONSE_BROADCAST_ASSIST_STATS = 29;
 }
 
 message OnDemandRequest {
@@ -173,6 +176,8 @@ message OnDemandResponse {
         RoutingTable routing_table=12;
         //fw+ DTN overlay stats response
         DtnOverlayStats dtn_overlay_stats=13;
+        // fw+ Broadcast Assist stats response
+        BroadcastAssistStats broadcast_assist_stats=14;
     }
 }
 
@@ -222,4 +227,15 @@ message DtnOverlayStats {
     optional bool enabled = 10;
     // Seconds since last forward attempt (0 if none)
     optional uint32 last_forward_age_secs = 11;
+}
+
+// fw+ Broadcast Assist statistics for UI/diagnostics
+message BroadcastAssistStats {
+    optional bool enabled = 1;
+    optional uint32 reflood_attempts = 2;
+    optional uint32 reflood_sent = 3;
+    optional uint32 suppressed_dup = 4;
+    optional uint32 suppressed_degree = 5;
+    optional uint32 suppressed_airtime = 6;
+    optional uint32 last_reflood_age_secs = 7;
 }

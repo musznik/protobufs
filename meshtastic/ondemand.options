@@ -12,3 +12,11 @@
 *NodeStats.opportunistic_mode int_size:8
 *RoutingErrorsHistory.routing_errors max_count:40
 *RoutingTable.routes max_count:40
+
+# fw+ Broadcast Assist stats sizes
+*BroadcastAssistStats.reflood_attempts int_size:16
+*BroadcastAssistStats.reflood_sent int_size:16
+*BroadcastAssistStats.suppressed_dup int_size:16
+*BroadcastAssistStats.suppressed_degree int_size:16
+*BroadcastAssistStats.suppressed_airtime int_size:16
+*BroadcastAssistStats.last_reflood_age_secs int_size:16

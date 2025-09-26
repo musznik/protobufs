@@ -951,6 +951,26 @@ message ModuleConfig {
     bool probe_fwplus_near_deadline = 11;
   }
 
+  // fw+ Broadcast Assist configuration for controlled reflooding of broadcasts
+  message BroadcastAssistConfig {
+    // Enable the module
+    bool enabled = 1;
+    // Only reflood when estimated neighbors are at or below this threshold (0 disables check)
+    uint32 degree_threshold = 2;
+    // Suppress reflood if we heard at least this many duplicates within window (0 disables)
+    uint32 dup_threshold = 3;
+    // Time window for duplicate counting, in milliseconds
+    uint32 window_ms = 4;
+    // Max extra hops we add when reflooding
+    uint32 max_extra_hops = 5;
+    // Random jitter before reflood to avoid collisions
+    uint32 jitter_ms = 6;
+    // Check airtime utilization before reflooding (be polite)
+    bool airtime_guard = 7;
+    // Whitelisted port numbers to consider for reflooding (values from PortNum)
+    repeated uint32 allowed_ports = 8;
+  }
+
   message IdleGameKnownVillages {
     repeated IdleGameState known = 1;
   }
@@ -1082,6 +1102,8 @@ message IdleGameAction {
     IdleGameConfig idle_game = 22;
 
     DtnOverlayConfig dtn_overlay = 23;
+    // fw+ Broadcast Assist module config
+    BroadcastAssistConfig broadcast_assist = 24;
     
   }
 }
