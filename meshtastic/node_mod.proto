@@ -8,20 +8,13 @@ option java_outer_classname = "NodeModProtos";
 option java_package = "com.geeksville.mesh";
 option swift_prefix = "";
 
-
 message NodeMod {
-  /*
-   * user text status
-   */
+  /* node text status */
   string text_status = 1;
   
-  /* 
-  * node emoji
-  */
+  /* node emoji */
   optional string emoji = 2;
 
-  /* 
-  * webmesh heartbeat, node supports webmesh server
-  */
+  /* webmesh heartbeat, if node is connected to webmesh server */
   optional bool webmesh_heartbeat = 3;
 }
