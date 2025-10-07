@@ -24,6 +24,7 @@
 *DtnOverlayStats.milestones_sent int_size:16
 *DtnOverlayStats.probes_sent int_size:16
 *DtnOverlayStats.last_forward_age_secs int_size:16
+*DtnOverlayStats.known_nodes_count int_size:16
 
 # fw+ Broadcast Assist stats sizes
 *BroadcastAssistStats.reflood_attempts int_size:16

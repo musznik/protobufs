@@ -227,6 +227,8 @@ message DtnOverlayStats {
     optional bool enabled = 10;
     // Seconds since last forward attempt (0 if none)
     optional uint32 last_forward_age_secs = 11;
+    // Number of known FW+ nodes (DTN-capable nodes)
+    optional uint32 known_nodes_count = 12;
 }
 
 // fw+ Broadcast Assist statistics for UI/diagnostics
