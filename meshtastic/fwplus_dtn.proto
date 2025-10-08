@@ -5,7 +5,7 @@ package meshtastic; // keep under meshtastic package like other FW+ protos
 option csharp_namespace = "Meshtastic.Protobufs";
 option go_package = "github.com/meshtastic/go/generated";
 option java_outer_classname = "FwplusDtnProtos";
-option java_package = "com.geeksville.mesh";
+option java_package = "org.meshtastic.proto";
 option swift_prefix = "";
 
 // fw+ DTN overlay messages. Transported over port FWPLUS_DTN_APP.
