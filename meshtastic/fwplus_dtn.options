@@ -1,4 +1,6 @@
 *FwplusDtnData.payload max_size:240
 *FwplusDtnReceipt.reason int_size:16
 *FwplusDtnData.channel int_size:8
+*FwplusDtnData.custody_path max_count:16
+*FwplusDtnData.custody_path int_size:8
 

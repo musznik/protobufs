@@ -17,16 +17,24 @@ message FwplusDtnData {
   uint32 orig_to = 3;
   // Channel index the original packet used
   uint32 channel = 4;
-  // Original receive time at the carrier (seconds since epoch or mesh time)
-  uint32 orig_rx_time = 5;
-  // Absolute deadline (millis since boot or epoch depending on firmware timebase)
-  uint32 deadline_ms = 6;
   // Whether payload is encrypted ciphertext (true) or plaintext (false)
-  bool is_encrypted = 7;
+  bool is_encrypted = 5;
   // Allows late proxy fallback to native DM near deadline
-  bool allow_proxy_fallback = 8;
+  bool allow_proxy_fallback = 6;
   // Payload bytes: plaintext or ciphertext 1:1 from original
-  bytes payload = 9;
+  bytes payload = 7;
+  //fw+ CRITICAL FIX #4: Custody loop prevention - track custody chain
+  // List of nodes (last byte only) that have held custody (in order: source → relay1 → relay2 → ...)
+  // Each intermediate node MUST check if its chosen next hop is already in this list
+  // to prevent custody loops (e.g., A→B→C→B would create infinite loop)
+  // Max 16 hops in custody chain (increased from 8 for larger networks)
+  // Uses uint32 low byte (NodeNum & 0xFF) for compact encoding - saves 48 bytes vs full uint32!
+  repeated uint32 custody_path = 8;
+  //fw+ Relative TTL: Time-to-live in milliseconds (simple and universal)
+  // Source initializes: ttl_minutes * 60 * 1000
+  // Each hop checks: if (ttl_remaining_ms == 0) → EXPIRED
+  // Works in ALL scenarios (GPS/no-GPS, mixed network, different uptimes)
+  uint32 ttl_remaining_ms = 9;
 }
 
 enum FwplusDtnStatus {

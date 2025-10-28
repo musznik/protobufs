@@ -77,6 +77,8 @@
 
 # fw+ DtnOverlayConfig sizing
 *DtnOverlayConfig.ttl_minutes int_size:16
+*DtnOverlayConfig.initial_delay_base_ms int_size:16
+*DtnOverlayConfig.retry_backoff_ms int_size:32
 *DtnOverlayConfig.max_tries int_size:8
 *DtnOverlayConfig.fallback_tail_percent int_size:8
 *DtnOverlayConfig.per_dest_min_spacing_ms int_size:16

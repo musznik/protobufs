@@ -229,6 +229,42 @@ message DtnOverlayStats {
     optional uint32 last_forward_age_secs = 11;
     // Number of known FW+ nodes (DTN-capable nodes)
     optional uint32 known_nodes_count = 12;
+    
+    // Custody & handoff statistics
+    // Custody handoff attempts to other FW+ nodes
+    optional uint32 handoffs_attempted = 13;
+    // Handoff target cache hits (avoided recomputation)
+    optional uint32 handoff_cache_hits = 14;
+    // Carrier loops detected and prevented
+    optional uint32 loops_detected = 15;
+    
+    // Local delivery statistics
+    // Messages successfully delivered to this node
+    optional uint32 delivered_local = 16;
+    // Duplicate deliveries prevented by tombstone
+    optional uint32 duplicates_suppressed = 17;
+    
+    // Progressive relay statistics
+    // Progressive relay attempts to edge nodes (unknown/distant dest)
+    optional uint32 progressive_relays = 18;
+    // Progressive relay loops detected and prevented
+    optional uint32 progressive_relay_loops = 19;
+    
+    // Adaptive routing statistics
+    // Adaptive path switches due to failures
+    optional uint32 adaptive_reroutes = 20;
+    // Link health evaluation count
+    optional uint32 link_health_checks = 21;
+    // Path reliability learning updates
+    optional uint32 path_learning_updates = 22;
+    // Number of actively monitored links
+    optional uint32 monitored_links = 23;
+    // Number of actively monitored paths
+    optional uint32 monitored_paths = 24;
+    
+    // Fallback statistics
+    // Fallbacks to native DM for unresponsive FW+ destinations
+    optional uint32 fwplus_unresponsive_fallbacks = 25;
 }
 
 // fw+ Broadcast Assist statistics for UI/diagnostics

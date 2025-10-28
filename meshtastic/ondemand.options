@@ -25,6 +25,24 @@
 *DtnOverlayStats.probes_sent int_size:16
 *DtnOverlayStats.last_forward_age_secs int_size:16
 *DtnOverlayStats.known_nodes_count int_size:16
+# Custody & handoff
+*DtnOverlayStats.handoffs_attempted int_size:16
+*DtnOverlayStats.handoff_cache_hits int_size:16
+*DtnOverlayStats.loops_detected int_size:16
+# Local delivery
+*DtnOverlayStats.delivered_local int_size:16
+*DtnOverlayStats.duplicates_suppressed int_size:16
+# Progressive relay
+*DtnOverlayStats.progressive_relays int_size:16
+*DtnOverlayStats.progressive_relay_loops int_size:16
+# Adaptive routing
+*DtnOverlayStats.adaptive_reroutes int_size:16
+*DtnOverlayStats.link_health_checks int_size:16
+*DtnOverlayStats.path_learning_updates int_size:16
+*DtnOverlayStats.monitored_links int_size:8
+*DtnOverlayStats.monitored_paths int_size:8
+# Fallback
+*DtnOverlayStats.fwplus_unresponsive_fallbacks int_size:16
 
 # fw+ Broadcast Assist stats sizes
 *BroadcastAssistStats.reflood_attempts int_size:16
