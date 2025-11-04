@@ -3,4 +3,6 @@
 *FwplusDtnData.channel int_size:8
 *FwplusDtnData.custody_path max_count:16
 *FwplusDtnData.custody_path int_size:8
+*FwplusDtnReceipt.custody_path max_count:16
+*FwplusDtnReceipt.custody_path int_size:8
 

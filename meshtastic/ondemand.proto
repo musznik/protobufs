@@ -191,12 +191,18 @@ message OnDemand {
 }
 
 // Routing table structures for UI
+enum RouteSource {
+    ROUTE_SOURCE_UNSPECIFIED = 0;
+    ROUTE_SOURCE_DV_ETX = 1;
+    ROUTE_SOURCE_LEGACY = 2;
+}
 message RoutingTableEntry {
     uint32 dest = 1;
     uint32 next_hop = 2;          // last-byte id of next hop
     float cost = 3;               // aggregated ETX-like cost
     uint32 confidence = 4;        // how sure we are
     uint32 age_secs = 5;          // age of entry in seconds
+    RouteSource source = 6;       // origin of this entry: DV-ETX or legacy NodeDB
 }
 
 message RoutingTable {

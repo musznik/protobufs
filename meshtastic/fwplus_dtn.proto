@@ -35,6 +35,8 @@ message FwplusDtnData {
   // Each hop checks: if (ttl_remaining_ms == 0) → EXPIRED
   // Works in ALL scenarios (GPS/no-GPS, mixed network, different uptimes)
   uint32 ttl_remaining_ms = 9;
+  // Indicates the payload has been wrapped end-to-end using PKI (payload holds ciphertext)
+  bool use_pki_encryption = 10;
 }
 
 enum FwplusDtnStatus {
@@ -50,6 +52,11 @@ message FwplusDtnReceipt {
   uint32 orig_id = 1;
   FwplusDtnStatus status = 2;
   uint32 reason = 3; // optional routing error / failure reason
+  uint32 dest = 4;   // original source node that should receive this receipt
+  uint32 custody_id = 5; // hash used for DTN custody tracking of this receipt
+  uint32 ttl_remaining_ms = 6; // remaining TTL for custody retransmissions
+  bool allow_proxy_fallback = 7; // whether native fallback is permitted near deadline
+  repeated uint32 custody_path = 8; // forward custody chain (low byte NodeNum values)
 }
 
 // Top-level container for FW+ DTN app messages
