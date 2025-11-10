@@ -2260,13 +2260,9 @@ message DeviceMetadata {
    */
   uint32 excluded_modules = 12;
 
-  bool hasNodeMod = 19;
-
   bool hasFwPlus = 20;
 
-  bool hasDtn = 22;
-
-  bool hasBroadcastAssistant = 23;
+  bool hasNodemod = 21;
 }
 
 /*

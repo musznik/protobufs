@@ -1102,9 +1102,8 @@ message IdleGameAction {
     IdleGameConfig idle_game = 22;
 
     DtnOverlayConfig dtn_overlay = 23;
-    // fw+ Broadcast Assist module config
+  
     BroadcastAssistConfig broadcast_assist = 24;
-    
   }
 }
 

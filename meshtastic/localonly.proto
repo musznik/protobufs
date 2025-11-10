@@ -134,12 +134,12 @@ message LocalModuleConfig {
   /*
    * Nodestatus Config
    */
-  ModuleConfig.NodeModConfig nodemod = 20;
+  ModuleConfig.NodeModConfig node_mod = 20;
 
   /*
   * NodeModAdmin Config
   */
-  ModuleConfig.NodeModAdminConfig nodemodadmin = 21;
+  ModuleConfig.NodeModAdminConfig node_mod_admin = 21;
 
   /*
   * IdleGameConfig Config
