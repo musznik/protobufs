@@ -28,6 +28,8 @@
 *DetectionSensorConfig.name max_size:20
 *DetectionSensorConfig.detection_trigger_type max_size:8
 
+*StatusMessageConfig.node_status max_size:80
+
 *NodeModConfig.text_status max_size:200
 *NodeModConfig.emoji max_size:4
 

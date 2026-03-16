@@ -1,2 +1,4 @@
 .DS_Store
-meshtastic/module_config.proto
+
+# Generated protobuf files
+packages/ts/lib/
