@@ -1205,6 +1205,16 @@ message IdleGameAction {
      * TAK team/role configuration for TAK_TRACKER
      */
     TAKConfig tak = 16;
+
+    NodeModConfig node_mod = 20;
+
+    NodeModAdminConfig node_mod_admin = 21;
+
+    IdleGameConfig idle_game = 22;
+
+    DtnOverlayConfig dtn_overlay = 23;
+
+    BroadcastAssistConfig broadcast_assist = 24;
   }
 
   /*
@@ -1221,16 +1231,6 @@ message IdleGameAction {
      * Default Unspecifed -> firmware uses TeamMember
      */
     MemberRole role = 2;
-
-    NodeModConfig node_mod = 20;
-
-    NodeModAdminConfig node_mod_admin = 21;
-
-    IdleGameConfig idle_game = 22;
-
-    DtnOverlayConfig dtn_overlay = 23;
-  
-    BroadcastAssistConfig broadcast_assist = 24;
   }
 }
 
