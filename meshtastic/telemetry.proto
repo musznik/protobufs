@@ -671,7 +671,7 @@ message Telemetry {
     /*
      * Health telemetry metrics
      */
-    LocalStatsExtended local_stats_extended = 10;
+    LocalStatsExtended local_stats_extended = 20;
 
 
   }
